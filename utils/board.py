@@ -4,6 +4,49 @@ from typing import Union
 from .pawn import Pawn
 
 
+class Grid(list):
+    def __init__(self, grid=None):
+        super().__init__()
+
+        if grid is None:
+            grid = []
+
+        self.grid: list = grid
+
+    def get(self, position: list) -> Union[Pawn, bool]:
+        if self.is_position_valid(position):
+            return self.grid[position[0]][position[1]]
+        else:
+            return False
+
+    def set(self, position: list, value: Pawn) -> None:
+        if self.is_position_valid(position):
+            self.grid[position[0]][position[1]] = value
+
+    def replace(self, search: str, replace: str = '.') -> None:
+        for i, row in enumerate(self.grid):
+            for j, pawn in enumerate(row):
+                if pawn.status == search:
+                    self.grid[i][j] = Pawn(replace)
+
+    def same(self, position: list, value: str) -> bool:
+        return self.get(position).status == value
+
+    def is_position_valid(self, position: list) -> bool:
+        return 0 <= position[0] < len(self.grid) \
+               and 0 <= position[1] < len(self.grid[0])
+
+    def __str__(self):
+        result = "[\n"
+        for row in self.grid:
+            result += f"   [{' '.join([pawn.status for pawn in row])}]\n"
+        result += "]"
+        return result
+
+    def __iter__(self):
+        return enumerate(self.grid)
+
+
 class Board:
     __slots__ = ('width', 'height', 'grid', 'hints')
 
@@ -15,7 +58,7 @@ class Board:
     def __init__(self, width: int, height: int):
         self.width: int = width
         self.height: int = height
-        self.grid: list = []
+        self.grid: Grid = Grid()
         self.hints: bool = False
 
     def make_board(self) -> None:
@@ -24,17 +67,17 @@ class Board:
 
         :return: None
         """
-        self.grid = [
+        self.grid: Grid = Grid([
             [Pawn('.') for _ in range(self.width)]
             for _ in range(self.height)
-        ]
+        ])
 
         middle_inf, middle_sup = int((self.width / 2) - 1), int(self.width / 2)
 
-        self.grid[middle_inf][middle_inf] = Pawn('x')
-        self.grid[middle_inf][middle_sup] = Pawn('o')
-        self.grid[middle_sup][middle_inf] = Pawn('o')
-        self.grid[middle_sup][middle_sup] = Pawn('x')
+        self.grid.set([middle_inf, middle_inf], Pawn('x'))
+        self.grid.set([middle_inf, middle_sup], Pawn('o'))
+        self.grid.set([middle_sup, middle_inf], Pawn('o'))
+        self.grid.set([middle_sup, middle_sup], Pawn('x'))
 
     def set_valid_poses(self, player: str) -> bool:
         """
@@ -45,32 +88,27 @@ class Board:
         """
         adv = 'x' if player == 'o' else 'o'
 
-        for i, row in enumerate(self.grid):
-            for j, pawn in enumerate(row):
-                if pawn.status == 'p':
-                    self.grid[i][j] = Pawn('.')
+        self.grid.replace('p', '.')
 
         valid = False
-        for i, row in enumerate(self.grid):
+        for i, row in self.grid:
             for j, col in enumerate(row):
-                if self.grid[i][j].status == adv:
+                if self.grid.get([i, j]).status == adv:
+
                     for direction in self.DIRECTIONS:
                         vector = [i + direction[0], j + direction[1]]
                         opposite_vector = [i - direction[0], j - direction[1]]
-                        if self.is_on_board(vector) \
-                                and self.is_on_board(opposite_vector):
 
-                            if self.grid[vector[0]][vector[1]].status == '.':
-                                if self.grid[opposite_vector[0]] \
-                                        [opposite_vector[1]].status == player:
-                                    self.grid[vector[0]][vector[1]] = Pawn('p')
+                        if self.grid.get(vector) \
+                                and self.grid.get(opposite_vector):
+
+                            if self.grid.same(vector, '.'):
+                                if self.grid.same(opposite_vector, player):
+                                    self.grid.set(vector, Pawn('p'))
                                     valid = True
-                                elif self.grid[opposite_vector[0]][
-                                    opposite_vector[1]].status == adv:
-                                    if self.browse_vector(opposite_vector,
-                                                          direction, player):
-                                        self.grid[vector[0]][vector[1]] = Pawn(
-                                            'p')
+                                elif self.grid.same(opposite_vector, adv):
+                                    if self.browse_vector(opposite_vector, direction, player):
+                                        self.grid.set(vector, Pawn('p'))
                                         valid = True
         return valid
 
