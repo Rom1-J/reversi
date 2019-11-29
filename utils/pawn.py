@@ -38,7 +38,7 @@ class Pawn:
             return colored('X', 'red')
         elif self.status == 'o':
             return colored('O', 'green')
-        elif self.status == 'p':
+        elif self.status == 'p' and self.visible:
             return colored('?', 'cyan', attrs=['bold', 'blink'])
         elif self.status == 'h' and self.visible:
             return colored('.', 'cyan', attrs=['bold', 'blink'])

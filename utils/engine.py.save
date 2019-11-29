@@ -16,7 +16,7 @@ class Engine:
         self.menu: Menu = Menu()
         self.menu.add_command('P', '*P*lace a pawn')
         self.menu.add_command('A', '*A*bandon')
-        self.menu.add_command('H', 'Toggle *h*ints')
+        self.menu.add_command('H', 'Toggle *h*ints', True)
         self.menu.add_command('U', '*U*ndo a placement ')
         self.menu.hints = self.board.hints
 
@@ -139,59 +139,4 @@ class Engine:
             action = input('')
 
         print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-        self.process_action(action.upper())
-
-    def process_action(self, action: str) -> None:
-        """
-        Execute l'action demandée
-
-        :param str action: Action to do
-        :return: None
-        """
-        if action == 'A':
-            self.stop()
-        elif action == 'P':
-            print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-            print("Position: (ex: D3) "
-                  + colored("or type 'back' to return to the action menu",
-                            'cyan',
-                            )
-                  )
-
-            move = input('')
-            while not self.board.is_valid_move(move) \
-                    and move != 'back':
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print(
-                    "Invalid position! please enter a new position: (ex: D3)"
-                    + colored(
-                        "or type 'back' to return to the action menu",
-                        'cyan'
-                    )
-                )
-                move = input('')
-
-            if move == 'back':
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                return self.get_action()
-
-            self.menu.pawns = self.board.move(move, self.menu.player)
-            self.menu.player = 'x' if self.menu.player == 'o' else 'o'
-            self.menu.turns += 1
-            self.render()
-        elif action == 'H':
-            self.board.toggle_hints()
-            self.menu.hints = self.board.hints
-            self.render()
-
-        elif action == 'U':
-            undo = self.load_backup()
-            if undo:
-                self.board.set_valid_poses(self.menu.player)
-                self.render()
-            else:
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print(colored("No backup !", 'red'))
+  

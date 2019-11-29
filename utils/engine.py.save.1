@@ -16,7 +16,7 @@ class Engine:
         self.menu: Menu = Menu()
         self.menu.add_command('P', '*P*lace a pawn')
         self.menu.add_command('A', '*A*bandon')
-        self.menu.add_command('H', 'Toggle *h*ints')
+        self.menu.add_command('H', 'Toggle *h*ints', True)
         self.menu.add_command('U', '*U*ndo a placement ')
         self.menu.hints = self.board.hints
 
