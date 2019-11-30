@@ -89,7 +89,7 @@ class Board:
         :param pose: position to check
         :return: bool - True or False if the emplacement is on board or not
         """
-        return 0 <= pose[0] < self.width and 1 <= pose[1] < self.height
+        return 0 <= pose[0] < self.width and 0 <= pose[1] < self.height
 
     def is_valid_move(self, move: str) -> bool:
         """
