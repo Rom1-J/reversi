@@ -177,8 +177,23 @@ class Board:
             return [row, col]
         return False
 
-    def get_grid(self) -> list:
-        return self.grid.copy()
+    def export(self) -> dict:
+        grid = []
+        for i, row in enumerate(self.grid):
+            grid.append([])
+            for pawn in row:
+                grid[i].append(pawn.status)
+
+        return {
+            'grid': grid
+        }
+
+    def load(self, data: dict) -> None:
+        grid = data.get('grid')
+
+        for i, row in enumerate(grid):
+            for j, pawn in enumerate(row):
+                self.grid[i][j] = Pawn(pawn)
 
     def __str__(self):
         header = '   \33[33m' \

@@ -1,13 +1,15 @@
 import platform
 import os
+import time
 from modules.termcolor import colored
 
 from .board import Board
 from .menu import Menu
+from .misc import *
 
 
 class Engine:
-    __slots__ = ('board', 'is_playing', 'menu', 'backup')
+    __slots__ = ('board', 'is_playing', 'menu', 'time')
 
     def __init__(self, board: Board):
         self.board: Board = board
@@ -17,41 +19,10 @@ class Engine:
         self.menu.add_command('P', '*P*lace a pawn')
         self.menu.add_command('A', '*A*bandon')
         self.menu.add_command('H', 'Toggle *h*ints')
-        self.menu.add_command('U', '*U*ndo a placement ')
+        self.menu.add_command('U', '*U*ndo a placement')
         self.menu.hints = self.board.hints
 
-        self.backup: dict = {
-            1: {
-                'turns': self.menu.turns,
-                'player': self.menu.player,
-                'pawns': self.menu.pawns.copy(),
-                'grid': self.board.get_grid()
-            }
-        }
-
-    def load_backup(self) -> bool:
-        # if self.menu.turns == 1:
-        #     return False
-
-        # backup: dict = self.backup.get(self.menu.turns - 1).copy()
-
-        print(self.backup)
-        quit()
-
-        self.menu.turns = backup['turns']
-        self.menu.player = backup['player']
-        self.menu.pawns = backup['pawns'].copy()
-        self.board.grid = backup['grid'].copy()
-
-        return True
-
-    def save(self):
-        self.backup[self.menu.turns] = {
-            'turns': self.menu.turns,
-            'player': self.menu.player,
-            'pawns': self.menu.pawns.copy(),
-            'grid': self.board.get_grid()
-        }
+        self.time = int(time.time())
 
     def start(self) -> None:
         """
@@ -79,12 +50,12 @@ class Engine:
 
         :return: None
         """
-        self.save()
 
         can_play = self.board.set_valid_poses(self.menu.player)
         if not can_play:
             self.menu.player = 'x' if self.menu.player == 'o' else 'o'
             self.menu.turns += 1
+            self.board.set_valid_poses(self.menu.player)
 
         os.system('cls' if platform.system() == 'Windows' else 'clear')
         flat_board = str(self.board).split('\n')
@@ -135,10 +106,10 @@ class Engine:
         print("Action:")
         action = input('')
         while action.upper() not in self.menu.get_commands():
-            print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
+            del_top_line()  # efface la ligne supérieur
             action = input('')
 
-        print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
+        del_top_line()
         self.process_action(action.upper())
 
     def process_action(self, action: str) -> None:
@@ -151,7 +122,7 @@ class Engine:
         if action == 'A':
             self.stop()
         elif action == 'P':
-            print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
+            del_top_line()  # efface la ligne supérieur
             print("Position: (ex: D3) "
                   + colored("or type 'back' to return to the action menu",
                             'cyan',
@@ -161,8 +132,7 @@ class Engine:
             move = input('')
             while not self.board.is_valid_move(move) \
                     and move != 'back':
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
+                del_top_line(2)
                 print(
                     "Invalid position! please enter a new position: (ex: D3)"
                     + colored(
@@ -173,9 +143,16 @@ class Engine:
                 move = input('')
 
             if move == 'back':
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
+                del_top_line(2)
                 return self.get_action()
+
+            backup = {
+                'board': self.board.export(),
+                'is_playing': self.is_playing,
+                'menu': self.menu.export(),
+                'time': self.time
+            }
+            save(f"games/{self.time}", backup)
 
             self.menu.pawns = self.board.move(move, self.menu.player)
             self.menu.player = 'x' if self.menu.player == 'o' else 'o'
@@ -187,11 +164,11 @@ class Engine:
             self.render()
 
         elif action == 'U':
-            undo = self.load_backup()
+            undo = load(f"games/{self.time}", self.menu.turns - 1)
             if undo:
-                self.board.set_valid_poses(self.menu.player)
+                self.menu.load(undo.get('menu'))
+                self.board.load(undo.get('board'))
                 self.render()
             else:
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
-                print("\x1b[1A\x1b[2K\x1b[1A")  # efface la ligne supérieur
+                del_top_line(2)
                 print(colored("No backup !", 'red'))

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89c37dbf-8cb2-4fe2-8b70-dd2ff79dcbcc" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="89c37dbf-8cb2-4fe2-8b70-dd2ff79dcbcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/menu.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +19,32 @@
     <option name="myAutoScrollFromSource" value="true" />
     <option name="myElementSize" value="356" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TxtGNhIV18tW2EoCiy5e6gzTzf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -23,19 +53,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="database.data.csv.formats" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -66,6 +84,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -91,13 +121,60 @@
       <workItem from="1574867401636" duration="3874000" />
       <workItem from="1574876996559" duration="3022000" />
       <workItem from="1574939535319" duration="3318000" />
+      <workItem from="1575472480370" duration="2936000" />
+      <workItem from="1576075040027" duration="539000" />
+      <workItem from="1576075606110" duration="236000" />
+      <workItem from="1576076700658" duration="4459000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1872" height="276" key="GridCell.Tab.0.bottom" timestamp="1576077394487">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="276" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1576077394487" />
+    <state width="1872" height="276" key="GridCell.Tab.0.center" timestamp="1576077394485">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="276" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1576077394485" />
+    <state width="1872" height="276" key="GridCell.Tab.0.left" timestamp="1576077394484">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="276" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1576077394484" />
+    <state width="1872" height="276" key="GridCell.Tab.0.right" timestamp="1576077394486">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="276" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1576077394486" />
+    <state x="533" y="291" width="847" height="529" key="IDE.errors.dialog" timestamp="1576077374356">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="533" y="291" width="847" height="529" key="IDE.errors.dialog/0.30.1920.1050@0.30.1920.1050" timestamp="1576077374356" />
+    <state x="491" y="146" key="SettingsEditor" timestamp="1576075577672">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="491" y="146" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1576075577672" />
+    <state x="800" y="471" width="313" height="169" key="VCS.ChangelistChooser" timestamp="1576075707220">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="800" y="471" width="313" height="169" key="VCS.ChangelistChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1576075707220" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project2$main.coverage" NAME="main Coverage Results" MODIFIED="1574630417054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/project2$main.coverage" NAME="main Coverage Results" MODIFIED="1576077333141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -4,7 +4,7 @@ from .pawn import Pawn
 
 
 class Menu:
-    __slots__ = ('_turns', '_player', 'pawns', 'commands', '_hints')
+    __slots__ = ('turns', 'player', 'pawns', 'commands', 'hints')
 
     def __init__(self, turns: int = 1, player: str = 'o', pawns=None,
                  commands=None, hints: bool = False):
@@ -13,13 +13,13 @@ class Menu:
         if commands is None:
             commands = {}
 
-        self._turns: int = turns
-        self._player: str = player
+        self.turns: int = turns
+        self.player: str = player
         self.pawns: list = pawns
         self.commands: dict = commands
-        self._hints: bool = hints
+        self.hints: bool = hints
 
-    def add_command(self, name: str, description: str, disabled=False):
+    def add_command(self, name: str, description: str, disabled=False) -> None:
         """
         Ajoute une nouvelle commande avec son déclancheur et sa description
 
@@ -43,29 +43,21 @@ class Menu:
                 commands[key] = value
         return list(commands.keys())
 
-    @property
-    def turns(self) -> int:
-        return self._turns
+    def export(self) -> dict:
+        return {
+            'turns': self.turns,
+            'player': self.player,
+            'pawns': self.pawns,
+            'commands': self.commands,
+            'hints': self.hints
+        }
 
-    @property
-    def player(self) -> str:
-        return self._player
-
-    @property
-    def hints(self) -> bool:
-        return self._hints
-
-    @turns.setter
-    def turns(self, turn: int):
-        self._turns = turn
-
-    @player.setter
-    def player(self, current: int):
-        self._player = current
-
-    @hints.setter
-    def hints(self, hint: bool):
-        self._hints = hint
+    def load(self, data: dict) -> None:
+        self.turns = data.get('turns')
+        self.player = data.get('player')
+        self.pawns = data.get('pawns')
+        self.commands = data.get('commands')
+        self.hints = data.get('hints')
 
     def __str__(self):
         player = str(Pawn(self.player))
