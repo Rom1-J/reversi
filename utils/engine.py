@@ -79,8 +79,7 @@ class Engine:
         y = self.menu.pawns[1]
 
         if x + y == self.menu.size ** 2:
-            self.congratulation()
-            quit()
+            self.stop()
 
     def congratulation(self) -> None:
         """

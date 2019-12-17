@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c37dbf-8cb2-4fe2-8b70-dd2ff79dcbcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/engine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/games/1576620487" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/games/1576620770" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,6 +52,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/games/1576620487" />
       <recent name="$PROJECT_DIR$/games/1576620239" />
       <recent name="$PROJECT_DIR$/games/1576620065" />
     </key>
@@ -127,7 +127,7 @@
       <workItem from="1576075040027" duration="539000" />
       <workItem from="1576075606110" duration="236000" />
       <workItem from="1576076700658" duration="5109000" />
-      <workItem from="1576619442338" duration="1034000" />
+      <workItem from="1576619442338" duration="1312000" />
     </task>
     <servers />
   </component>
