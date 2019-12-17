@@ -1,0 +1,48 @@
+{
+    "board": {
+        "grid": [
+            [
+                "p",
+                "o",
+                "p",
+                "."
+            ],
+            [
+                ".",
+                "o",
+                "o",
+                "."
+            ],
+            [
+                "p",
+                "o",
+                "x",
+                "."
+            ],
+            [
+                ".",
+                ".",
+                ".",
+                "."
+            ]
+        ]
+    },
+    "is_playing": true,
+    "menu": {
+        "turns": 2,
+        "player": "x",
+        "pawns": [
+            1,
+            4
+        ],
+        "commands": {
+            "P": "*P*lace a pawn",
+            "A": "*A*bandon",
+            "H": "Toggle *h*ints",
+            "U": "*U*ndo a placement",
+            "R": "*R*edo a placement"
+        },
+        "hints": true
+    },
+    "time": 1576620424
+}

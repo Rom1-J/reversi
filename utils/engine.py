@@ -75,6 +75,13 @@ class Engine:
             print(flat_board[i], ' ' * 6,
                   flat_menu[i])
 
+        x = self.menu.pawns[0]
+        y = self.menu.pawns[1]
+
+        if x + y == self.menu.size ** 2:
+            self.congratulation()
+            quit()
+
     def congratulation(self) -> None:
         """
         Affiche le message de victoire
