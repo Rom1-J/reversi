@@ -4,10 +4,10 @@ from .pawn import Pawn
 
 
 class Menu:
-    __slots__ = ('turns', 'player', 'pawns', 'commands', 'hints')
+    __slots__ = ('turns', 'player', 'pawns', 'commands', 'hints', 'size')
 
     def __init__(self, turns: int = 1, player: str = 'o', pawns=None,
-                 commands=None, hints: bool = False):
+                 commands=None, hints: bool = False, size: int = 8):
         if pawns is None:
             pawns = [2, 2]
         if commands is None:
@@ -18,6 +18,7 @@ class Menu:
         self.pawns: list = pawns
         self.commands: dict = commands
         self.hints: bool = hints
+        self.size: int = size
 
     def add_command(self, name: str, description: str, disabled=False) -> None:
         """
@@ -65,8 +66,10 @@ class Menu:
         menu += f"It is the turn of {player}\n"
         menu += f"{player} can play\n"
         menu += "\n"
-        menu += f"Pawns : {str(Pawn('x'))} {colored(self.pawns[0], 'red')}\n"
-        menu += f"        {str(Pawn('o'))} {colored(self.pawns[1], 'green')}\n"
+        menu += f"Pawns : {str(Pawn('x'))} {colored(self.pawns[0], 'red')}" \
+                f" {int((self.pawns[0]*100)/(self.size**2))}%\n"
+        menu += f"        {str(Pawn('o'))} {colored(self.pawns[1], 'green')}" \
+                f" {int((self.pawns[1]*100)/(self.size**2))}%\n"
         menu += "\n"
         menu += "Commands :\n"
         for name, description in self.commands.items():

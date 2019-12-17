@@ -23,9 +23,9 @@
             ],
             [
                 ".",
-                ".",
-                ".",
                 "p",
+                "x",
+                "o",
                 ".",
                 ".",
                 ".",
@@ -85,11 +85,11 @@
     },
     "is_playing": true,
     "menu": {
-        "turns": 1,
+        "turns": 3,
         "player": "o",
         "pawns": [
-            2,
-            2
+            3,
+            3
         ],
         "commands": {
             "P": "*P*lace a pawn",
@@ -99,5 +99,5 @@
         },
         "hints": true
     },
-    "time": 1576081189
+    "time": 1576619668
 }

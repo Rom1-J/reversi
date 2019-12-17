@@ -15,11 +15,12 @@ class Engine:
         self.board: Board = board
         self.is_playing: bool = False
 
-        self.menu: Menu = Menu()
+        self.menu: Menu = Menu(size=self.board.height)
         self.menu.add_command('P', '*P*lace a pawn')
         self.menu.add_command('A', '*A*bandon')
         self.menu.add_command('H', 'Toggle *h*ints')
         self.menu.add_command('U', '*U*ndo a placement')
+        self.menu.add_command('R', '*R*edo a placement')
         self.menu.hints = self.board.hints
 
         self.time = int(time.time())
@@ -158,6 +159,13 @@ class Engine:
             self.menu.player = 'x' if self.menu.player == 'o' else 'o'
             self.menu.turns += 1
             self.render()
+
+            save(f"games/{self.time}", {
+                'board': self.board.export(),
+                'is_playing': self.is_playing,
+                'menu': self.menu.export(),
+                'time': self.time
+            })
         elif action == 'H':
             self.board.toggle_hints()
             self.menu.hints = self.board.hints
@@ -168,6 +176,16 @@ class Engine:
             if undo:
                 self.menu.load(undo.get('menu'))
                 self.board.load(undo.get('board'))
+                self.render()
+            else:
+                del_top_line(2)
+                print(colored("No backup !", 'red'))
+
+        elif action == 'R':
+            redo = load(f"games/{self.time}", self.menu.turns + 1)
+            if redo:
+                self.menu.load(redo.get('menu'))
+                self.board.load(redo.get('board'))
                 self.render()
             else:
                 del_top_line(2)

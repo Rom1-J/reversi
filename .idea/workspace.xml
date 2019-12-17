@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c37dbf-8cb2-4fe2-8b70-dd2ff79dcbcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576081189/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576081189/2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/menu.py" afterDir="false" />
     </list>
@@ -124,7 +123,8 @@
       <workItem from="1575472480370" duration="2936000" />
       <workItem from="1576075040027" duration="539000" />
       <workItem from="1576075606110" duration="236000" />
-      <workItem from="1576076700658" duration="4459000" />
+      <workItem from="1576076700658" duration="5109000" />
+      <workItem from="1576619442338" duration="508000" />
     </task>
     <servers />
   </component>
@@ -145,6 +145,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="742" y="313" width="430" height="486" key="FileChooserDialogImpl" timestamp="1576081835358">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="742" y="313" width="430" height="486" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1576081835358" />
     <state width="1872" height="276" key="GridCell.Tab.0.bottom" timestamp="1576077394487">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
