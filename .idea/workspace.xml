@@ -2,10 +2,172 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c37dbf-8cb2-4fe2-8b70-dd2ff79dcbcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/romain.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/romain.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576081301/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576081301/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/15.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/16.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/17.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619106/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619668/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619668/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619668/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619668/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619668/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619817/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619900/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619952/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619952/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619952/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576619952/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620065/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620239/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620303/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620303/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620303/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620303/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620303/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620303/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620350/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620424/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620487/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620705/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576620770/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576670919/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576670919/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576682053/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576682053/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576682053/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576682053/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689430/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689430/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689447/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689447/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689460/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689460/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689491/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689491/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689505/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689505/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689631/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689631/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689735/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689735/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689770/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689770/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689882/9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689929/7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689951/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/1576689951/2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/engine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +299,7 @@
       <workItem from="1576075606110" duration="236000" />
       <workItem from="1576076700658" duration="5109000" />
       <workItem from="1576619442338" duration="3323000" />
-      <workItem from="1576683029067" duration="5000000" />
+      <workItem from="1576683029067" duration="5919000" />
     </task>
     <servers />
   </component>

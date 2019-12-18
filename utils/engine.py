@@ -195,7 +195,8 @@ class Engine:
             self.render()
 
         elif action == 'U':
-            undo = load(f"games/{self.time}", self.menu.turns - 1)
+            to_undo = 1 if self.players == 2 else 2
+            undo = load(f"games/{self.time}", self.menu.turns - to_undo)
             if undo:
                 self.menu.load(undo.get('menu'))
                 self.board.load(undo.get('board'))
@@ -205,7 +206,8 @@ class Engine:
                 print(colored("No backup !", 'red'))
 
         elif action == 'R':
-            redo = load(f"games/{self.time}", self.menu.turns + 1)
+            to_redo = 1 if self.players == 2 else 2
+            redo = load(f"games/{self.time}", self.menu.turns + to_redo)
             if redo:
                 self.menu.load(redo.get('menu'))
                 self.board.load(redo.get('board'))
