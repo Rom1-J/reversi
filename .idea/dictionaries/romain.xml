@@ -14,6 +14,7 @@
       <w>cherche</w>
       <w>commande</w>
       <w>commandes</w>
+      <w>contre</w>
       <w>damier</w>
       <w>deja</w>
       <w>demande</w>
@@ -22,6 +23,7 @@
       <w>dispo</w>
       <w>déclancheur</w>
       <w>déclancheurs</w>
+      <w>définie</w>
       <w>désactive</w>
       <w>effacer</w>
       <w>effectuer</w>
@@ -40,8 +42,11 @@
       <w>liste</w>
       <w>mouvement</w>
       <w>nouvelle</w>
+      <w>parcours</w>
+      <w>partant</w>
       <w>pion</w>
       <w>pions</w>
+      <w>piont</w>
       <w>pionts</w>
       <w>placés</w>
       <w>possibilitées</w>
@@ -52,11 +57,14 @@
       <w>saisie</w>
       <w>sont</w>
       <w>stdscr</w>
+      <w>suivant</w>
       <w>supérieur</w>
       <w>taille</w>
       <w>utilisateur</w>
+      <w>valides</w>
       <w>victoire</w>
       <w>vide</w>
+      <w>voir</w>
     </words>
   </dictionary>
 </component>

@@ -1,5 +1,7 @@
 import platform
 import time
+import random
+
 from modules.termcolor import colored
 
 from .board import Board
@@ -8,9 +10,9 @@ from .misc import *
 
 
 class Engine:
-    __slots__ = ('board', 'is_playing', 'menu', 'time')
+    __slots__ = ('board', 'is_playing', 'menu', 'time', 'players')
 
-    def __init__(self, board: Board):
+    def __init__(self, board: Board, players: int):
         self.board: Board = board
         self.is_playing: bool = False
 
@@ -23,6 +25,8 @@ class Engine:
         self.menu.hints = self.board.hints
 
         self.time = int(time.time())
+
+        self.players = players
 
     def start(self) -> None:
         """
@@ -109,14 +113,17 @@ class Engine:
 
         :return: None
         """
-        print("Action:")
-        action = input('')
-        while action.upper() not in self.menu.get_commands():
-            del_top_line()  # efface la ligne supérieur
+        if self.menu.player == 'o' or (self.menu.player == 'x' and self.players == 2):
+            print("Action:")
             action = input('')
+            while action.upper() not in self.menu.get_commands():
+                del_top_line()  # efface la ligne supérieur
+                action = input('')
 
-        del_top_line()
-        self.process_action(action.upper())
+            del_top_line()
+            self.process_action(action.upper())
+        else:
+            self.process_action('P')
 
     def process_action(self, action: str) -> None:
         """
@@ -128,29 +135,40 @@ class Engine:
         if action == 'A':
             self.stop()
         elif action == 'P':
-            del_top_line()  # efface la ligne supérieur
-            print("Position: (ex: D3) "
-                  + colored("or type 'back' to return to the action menu",
-                            'cyan',
-                            )
-                  )
+            already_parsed = False
+            if self.menu.player == 'o' or (self.menu.player == 'x' and self.players == 2):
+                del_top_line()  # efface la ligne supérieur
+                print("Position: (ex: D3) "
+                      + colored("or type 'back' to return to the action menu",
+                                'cyan',
+                                )
+                      )
 
-            move = input('')
-            while not self.board.is_valid_move(move) \
-                    and move != 'back':
-                del_top_line(2)
-                print(
-                    "Invalid position! please enter a new position: (ex: D3)"
-                    + colored(
-                        "or type 'back' to return to the action menu",
-                        'cyan'
-                    )
-                )
                 move = input('')
+                while not self.board.is_valid_move(move) \
+                        and move != 'back':
+                    del_top_line(2)
+                    print(
+                        "Invalid position! please enter a new position: (ex: D3)"
+                        + colored(
+                            "or type 'back' to return to the action menu",
+                            'cyan'
+                        )
+                    )
+                    move = input('')
 
-            if move == 'back':
-                del_top_line(2)
-                return self.get_action()
+                if move == 'back':
+                    del_top_line(2)
+                    return self.get_action()
+            else:
+                can_play = self.board.set_valid_poses('x')
+                if not can_play:
+                    self.menu.player = 'o'
+                    self.menu.turns += 1
+                    self.board.set_valid_poses(self.menu.player)
+                else:
+                    move = random.choice(self.board.get_valid_poses())
+                    already_parsed = True
 
             backup = {
                 'board': self.board.export(),
@@ -160,7 +178,7 @@ class Engine:
             }
             save(f"games/{self.time}", backup)
 
-            self.menu.pawns = self.board.move(move, self.menu.player)
+            self.menu.pawns = self.board.move(move, self.menu.player, already_parsed)
             self.menu.player = 'x' if self.menu.player == 'o' else 'o'
             self.menu.turns += 1
             self.render()

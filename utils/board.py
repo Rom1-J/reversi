@@ -52,27 +52,29 @@ class Board:
 
         valid = False
         for i, row in enumerate(self.grid):
-            for j, col in enumerate(row):
+            for j, pawn in enumerate(row):
                 if self.grid[i][j].status == adv:
                     for direction in self.DIRECTIONS:
                         vector = [i + direction[0], j + direction[1]]
                         opposite_vector = [i - direction[0], j - direction[1]]
-                        if self.is_on_board(vector) \
-                                and self.is_on_board(opposite_vector):
-
+                        if self.is_on_board(vector) and self.is_on_board(opposite_vector):
                             if self.grid[vector[0]][vector[1]].status == '.':
-                                if self.grid[opposite_vector[0]] \
-                                        [opposite_vector[1]].status == player:
+                                if self.grid[opposite_vector[0]][opposite_vector[1]].status == player:
                                     self.grid[vector[0]][vector[1]] = Pawn('p')
                                     valid = True
-                                elif self.grid[opposite_vector[0]][
-                                    opposite_vector[1]].status == adv:
-                                    if self.browse_vector(opposite_vector,
-                                                          direction, player):
-                                        self.grid[vector[0]][vector[1]] = Pawn(
-                                            'p')
+                                elif self.grid[opposite_vector[0]][opposite_vector[1]].status == adv:
+                                    if self.browse_vector(opposite_vector, direction, player):
+                                        self.grid[vector[0]][vector[1]] = Pawn('p')
                                         valid = True
         return valid
+
+    def get_valid_poses(self):
+        poses = []
+        for i, row in enumerate(self.grid):
+            for j, pawn in enumerate(row):
+                if pawn.status == 'p':
+                    poses.append([i, j])
+        return poses
 
     def browse_vector(self, pose: list, vector: tuple, player: str) -> bool:
         """
@@ -84,8 +86,7 @@ class Board:
         :param str player: Player to search
         :return: bool - True if there is a same player pawn
         """
-        while self.is_on_board([pose[0] - vector[0], pose[1] - vector[1]]) and \
-                self.grid[pose[0]][pose[1]].status != '.':
+        while self.is_on_board([pose[0] - vector[0], pose[1] - vector[1]]) and self.grid[pose[0]][pose[1]].status != '.':
             pose = [pose[0] - vector[0], pose[1] - vector[1]]
             if self.grid[pose[0]][pose[1]].status == player:
                 return True
@@ -112,15 +113,16 @@ class Board:
         return pose and self.is_on_board(pose) and self.grid[pose[0]][
             pose[1]].status == 'p'
 
-    def move(self, move: str, player: str) -> list:
+    def move(self, move: str, player: str, is_parsed: bool) -> list:
         """
         Ajoute un pion du joueur player a la position move
 
         :param str move: position to where pawn needs to be placed
         :param str player: player to move
+        :param bool is_parsed: is move already parsed ?
         :return: list: Count of new pawns for each player
         """
-        pose = self.parser(move)
+        pose = self.parser(move) if not is_parsed else move
         self.grid[pose[0]][pose[1]] = Pawn(player)
         self.flip(pose, player)
         return self.count()
@@ -134,16 +136,13 @@ class Board:
         :return: None
         """
         for direction in self.DIRECTIONS:
-            if self.browse_vector(pose, (0 - direction[0], 0 - direction[1]),
-                                  player):
+            if self.browse_vector(pose, (0 - direction[0], 0 - direction[1]), player):
                 checked_pose = [pose[0] + direction[0], pose[1] + direction[1]]
                 while self.is_on_board(checked_pose):
-                    if self.grid[checked_pose[0]][checked_pose[1]].status \
-                            in ['.', player, 'p']:
+                    if self.grid[checked_pose[0]][checked_pose[1]].status in ['.', player, 'p']:
                         break
                     else:
-                        self.grid[checked_pose[0]][checked_pose[1]] = Pawn(
-                            player)
+                        self.grid[checked_pose[0]][checked_pose[1]] = Pawn(player)
                     checked_pose = [checked_pose[0] + direction[0],
                                     checked_pose[1] + direction[1]]
 

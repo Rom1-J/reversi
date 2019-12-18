@@ -11,10 +11,16 @@ if __name__ == '__main__':
 
     width = height = int(size)
 
+    players = input("Joueur contre une IA ? [O/n] ")
+    while players.lower() not in ['yes', 'y', 'oui', 'o', 'no', 'n', 'non', '']:
+        players = input("Err, joueur contre une IA ? [O/n] ")
+
+    players = 2 if players in ['no', 'n', 'non'] else 1
+
     board = Board(width, height)
     board.make_board()
 
-    engine = Engine(board)
+    engine = Engine(board, players)
     engine.start()
 
     try:
