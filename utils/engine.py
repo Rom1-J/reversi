@@ -1,5 +1,4 @@
 import platform
-import os
 import time
 from modules.termcolor import colored
 

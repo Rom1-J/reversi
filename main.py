@@ -20,5 +20,5 @@ if __name__ == '__main__':
     try:
         while engine.is_playing:
             engine.get_action()
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, EOFError):
         engine.stop()

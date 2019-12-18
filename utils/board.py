@@ -75,6 +75,15 @@ class Board:
         return valid
 
     def browse_vector(self, pose: list, vector: tuple, player: str) -> bool:
+        """
+        Parcours le tableau en partant de `pose` et en suivant le `vector`
+        pour voir s'il y a un piont de `player` dans cette direction
+
+        :param list pose: Start position
+        :param tuple vector: Vector to follow
+        :param str player: Player to search
+        :return: bool - True if there is a same player pawn
+        """
         while self.is_on_board([pose[0] - vector[0], pose[1] - vector[1]]) and \
                 self.grid[pose[0]][pose[1]].status != '.':
             pose = [pose[0] - vector[0], pose[1] - vector[1]]
@@ -117,6 +126,13 @@ class Board:
         return self.count()
 
     def flip(self, pose: list, player: str) -> None:
+        """
+        Retourne tous les pions en partant d'une position donnée
+
+        :param list pose: Start position
+        :param str player: Player to search
+        :return: None
+        """
         for direction in self.DIRECTIONS:
             if self.browse_vector(pose, (0 - direction[0], 0 - direction[1]),
                                   player):
@@ -132,6 +148,11 @@ class Board:
                                     checked_pose[1] + direction[1]]
 
     def count(self) -> list:
+        """
+        Compte les pions sur le plateau
+
+        :return: list - X's pawns at index 0, O's pawns at index 1
+        """
         pawns = [0, 0]
 
         for row in self.grid:
